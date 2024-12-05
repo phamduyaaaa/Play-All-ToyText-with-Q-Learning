@@ -1,4 +1,0 @@
-Using: SimpleScreenRecorder
-Size: 256x256 pixel
-Time: 10s
-Convert mp4 to GIF: https://ezgif.com
