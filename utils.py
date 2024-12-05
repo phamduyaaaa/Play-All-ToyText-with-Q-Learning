@@ -1,7 +1,7 @@
 import numpy as np
 from colorama import Fore
 
-def epsilon_greedy_policy(env, state):
+def epsilon_greedy_policy(env, state, EPSILON, Q_table):
     if np.random.rand() < EPSILON:
         action = env.action_space.sample()  # Explore
     else:
