@@ -5,7 +5,7 @@ from utils import *
 
 with open("config.yaml", "r") as file:
     config = yaml.safe_load(file)
-    NUM_EPISODES = config['epochs']
+    NUM_EPISODES = config['num_episodes']
     ALPHA = config['alpha']
     GAMMA = config['gamma']
     MODE = config['mode']
@@ -21,8 +21,7 @@ def q_learning():
         total_reward = 0
         steps = 0
         while True:
-            action = epsilon_greedy_policy(env, state)
-            # action = true_action(env, state)
+            action = epsilon_greedy_policy(env, state, EPSILON, Q_table)
             next_state, reward, is_done, _, _ = env.step(action)
             Q_table[state, action] = Q_table[state, action] + ALPHA * (reward + GAMMA * np.max(Q_table[next_state, :]) - Q_table[state, action])
             total_reward += reward
@@ -30,7 +29,7 @@ def q_learning():
             steps += 1
             if is_done or steps >= MAX_STEPS:
                 break
-        print_epoch(epoch, steps, total_reward, Q_table)
+        print_epoch(episode, steps, total_reward, Q_table)
 
 if __name__ == '__main__':
     q_learning()
