@@ -1,8 +1,7 @@
-batch_size: 32
-num_episodes: 1000
+num_episodes: 100001
 alpha: 0.5
 gamma: 0.9
 mode: human
 max_steps: 100
-epochs: 100001
 epsilon: 0.3
+env: "FrozenLake-v1"
