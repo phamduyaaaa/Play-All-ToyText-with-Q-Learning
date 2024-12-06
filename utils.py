@@ -20,10 +20,6 @@ def print_epoch(epoch, steps, total_reward, Q_table):
     print(Fore.YELLOW + "Q-Table:")
     print(Fore.CYAN + "-" * 50)
 
-    header = f"{'State':<8} | {'LEFT':>10} | {'DOWN':>10} | {'RIGHT':>10} | {'UP':>10}"
-    print(Fore.LIGHTMAGENTA_EX + header)
-    print(Fore.CYAN + "-" * 50)
-
     for state, actions in enumerate(Q_table):
         row = f"{state:<8} | " + " | ".join(f"{q_val:>10.4f}" for q_val in actions)
         print(Fore.WHITE + row)
