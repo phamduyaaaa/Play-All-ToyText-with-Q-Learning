@@ -18,6 +18,42 @@ In ToyText environments, agents learn to take actions by maximizing rewards in g
 The objective of this project is to apply the **Q-Learning** algorithm to optimize agents' policies and achieve the highest possible rewards.
 
 ---
+### Q-learning Update Rule
+The Q-learning update for the Q-table is expressed as:
+
+$$
+Q(s, a) \leftarrow Q(s, a) + \alpha \left[ r + \gamma \max_{a'} Q(s', a') - Q(s, a) \right]
+$$
+
+---
+
+### Explanation of Terms
+
+
+- **$Q(s, a)$:** The current Q-value for performing action $a$ in state $s$.
+- **$alpha$ $(Learning Rate)$:** A scalar that controls how much the new information influences the update. Values range from $0$ to $1$.
+- **$r$ $(Reward)$:** The immediate reward received after performing action $a$ in state $s$.
+- **$gamma$ $(Discount Factor)$:** A scalar between $0$ and $1$ that determines the importance of future rewards. A higher $gamma$ emphasizes long-term rewards.
+- **$max_{a'}$ $Q(s', a')$:** The maximum Q-value for the next state $s'$ across all possible actions $a'$.
+- **$(s, a)$:** The current state and action pair.
+- **$(s', a')$:** The next state and the set of possible actions.
+
+---
+
+### Key Concepts
+
+1. **Temporal Difference (TD) Error:**
+   The difference between the expected Q-value and the current Q-value:
+   
+     $TD\$ $Error$ $=$ $r$ + $\gamma \max_{a'}$ $Q(s', a')$ - $Q(s, a)$
+
+3. **Q-value Update:**
+   The Q-value for the current state-action pair $(s, a)$ is updated using the TD error, scaled by the learning rate $(alpha)$. This balances learning from new experiences versus relying on existing knowledge.
+
+4. **Learning Dynamics:**
+   - The update incorporates both the immediate reward $r$ and the discounted future rewards $gamma$ $max_{a'}$ $Q(s', a')$.
+   - Over time, the Q-table converges to optimal values, assuming sufficient exploration and a properly tuned learning rate.
+---
 
 ## 🌐 Environments
 
