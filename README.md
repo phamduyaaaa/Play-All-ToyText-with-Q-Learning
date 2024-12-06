@@ -1,7 +1,7 @@
 # 🎮 Play-All-ToyText with Q-Learning
 
 Welcome to the **Play-All-ToyText with Q-Learning** project! 🚀  
-In this project, I've applied the Q-Learning algorithm to solve problems in popular ToyText environments like FrozenLake, CliffWalking, Blackjack, and Taxi-v3.
+In this project, I've applied the Q-Learning algorithm to solve problems in popular ToyText environments like FrozenLake, CliffWalking, Blackjack, and Taxi.
 
 The goal is to train agents using Q-Learning to optimize policies and maximize rewards in these environments.
 
