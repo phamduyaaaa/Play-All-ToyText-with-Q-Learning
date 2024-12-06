@@ -3,16 +3,6 @@ import numpy as np
 import yaml
 from utils import *
 
-with open("config.yaml", "r") as file:
-    config = yaml.safe_load(file)
-    NUM_EPISODES = config['num_episodes']
-    ALPHA = config['alpha']
-    GAMMA = config['gamma']
-    MODE = config['mode']
-    MAX_STEPS = config['max_steps']
-    EPSILON = config['epsilon']
-    ENV = config['env']
-
 def q_learning():
     env = gym.make(ENV,is_slippery=False, render_mode=MODE)
     Q_table = np.zeros((env.observation_space.n, env.action_space.n))
@@ -32,4 +22,13 @@ def q_learning():
         print_epoch(episode, steps, total_reward, Q_table)
 
 if __name__ == '__main__':
+    with open("config.yaml", "r") as file:
+    config = yaml.safe_load(file)
+    NUM_EPISODES = config['num_episodes']
+    ALPHA = config['alpha']
+    GAMMA = config['gamma']
+    MODE = config['mode']
+    MAX_STEPS = config['max_steps']
+    EPSILON = config['epsilon']
+    ENV = config['env']
     q_learning()
