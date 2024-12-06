@@ -29,7 +29,7 @@ def q_learning():
         writer.writerow([episode, total_reward])
     np.save("Q_table.npy", Q_table)
 if __name__ == '__main__':
-    with open("config.yaml", "r") as file:
+    with open("blackjack.yaml", "r") as file:
         config = yaml.safe_load(file)
         NUM_EPISODES = config['num_episodes']
         ALPHA = config['alpha']
