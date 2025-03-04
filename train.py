@@ -23,12 +23,12 @@ def q_learning():
 
 if __name__ == '__main__':
     with open("config.yaml", "r") as file:
-    config = yaml.safe_load(file)
-    NUM_EPISODES = config['num_episodes']
-    ALPHA = config['alpha']
-    GAMMA = config['gamma']
-    MODE = config['mode']
-    MAX_STEPS = config['max_steps']
-    EPSILON = config['epsilon']
-    ENV = config['env']
+        config = yaml.safe_load(file)
+        NUM_EPISODES = config['num_episodes']
+        ALPHA = config['alpha']
+        GAMMA = config['gamma']
+        MODE = config['mode']
+        MAX_STEPS = config['max_steps']
+        EPSILON = config['epsilon']
+        ENV = config['env']
     q_learning()
